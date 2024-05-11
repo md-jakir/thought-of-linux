@@ -1,8 +1,8 @@
-# seccomp is a Linux security tool
+# seccomp is a Linux security tool that restricts a container's syscall 
 
 GitHub: https://github.com/genuinetools/amicontained?tab=readme-ov-file#docker
 
-# To check block Syscalls in docker container
+# To check block Syscalls in the docker container
 
 docker run jess/amicontained nginx
 
