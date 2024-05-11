@@ -7,3 +7,7 @@ GitHub: https://github.com/genuinetools/amicontained?tab=readme-ov-file#docker
 docker run jess/amicontained nginx
 
 # Dcker Hub: https://hub.docker.com/r/jess/amicontained
+
+# To find syscall that needs for ls /root command
+
+$ strace -c ls /root [# strace is Linux tool that is used to get needed syscalls for a process ]
