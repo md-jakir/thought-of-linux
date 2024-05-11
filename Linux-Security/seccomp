@@ -1,0 +1,9 @@
+# seccomp is a Linux security tool
+
+GitHub: https://github.com/genuinetools/amicontained?tab=readme-ov-file#docker
+
+# To check block Syscalls in docker container
+
+docker run jess/amicontained nginx
+
+# Dcker Hub: https://hub.docker.com/r/jess/amicontained
