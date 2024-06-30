@@ -25,3 +25,8 @@ certbot certonly --force-renewal --manual --preferred-challenges=dns --email jak
     service iptables save
     
     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IPS ; do echo "iptables -I INPUT -s $IPS -j DROP" ; done
+
+    find . -type f -name "*.php" -exec grep "base64_decode" {} \;
+    find . -type f -name "*.php" -exec grep -l "base64_decode" {} \;
+    
+    find . -type f -name "*.php" -exec grep -l "base64_decode" {} \; | while read FILE ; do mv $FILE /var/www/vhosts/muslimaidbd.org/quarantine/ ; done
