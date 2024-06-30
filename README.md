@@ -30,3 +30,20 @@ certbot certonly --force-renewal --manual --preferred-challenges=dns --email jak
     find . -type f -name "*.php" -exec grep -l "base64_decode" {} \;
     
     find . -type f -name "*.php" -exec grep -l "base64_decode" {} \; | while read FILE ; do mv $FILE /var/www/vhosts/muslimaidbd.org/quarantine/ ; done
+    top -n 1 -b | grep musli | awk '{print $1}'
+    top -n 1 -b | grep musli | awk '{print $1}' | while read PID ; do kill -9 $PID ; done
+    
+    while : ; sleep 1 ; do top -n 1 -b | grep musli | awk '{print $1}' ; done
+    
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IPS ; do echo "iptables -I INPUT -s $IPS -j DROP" ; done
+    
+     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}'
+     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9'
+    
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IPS ; do echo "iptables -I INPUT -s $IPS -j DROP" ; done
+    
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IP ; do grep $IP /etc/sysconfig/iptables ; done
+    
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IPS ; do echo "iptables -I INPUT -s $IPS -j DROP" ; done | bash
+    
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IP ; do grep -v
