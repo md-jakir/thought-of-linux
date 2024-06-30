@@ -37,8 +37,8 @@ certbot certonly --force-renewal --manual --preferred-challenges=dns --email jak
     
     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IPS ; do echo "iptables -I INPUT -s $IPS -j DROP" ; done
     
-     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}'
-     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9'
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}'
+    netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9'
     
     netstat -tunap | grep :80 | awk -F\: '{print $2}' | awk '{print $2}' | sort | uniq -c | sort -n | awk '$1>9' | awk '{print $2}' | while read IPS ; do echo "iptables -I INPUT -s $IPS -j DROP" ; done
     
